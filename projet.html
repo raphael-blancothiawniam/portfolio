@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="fr" data-type="software" data-radius="soft" data-ground="sky" data-buttons="tonal" data-motion>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Projet : Raphaël BLANCO--THIAW-NIAM, administrateur systèmes et réseaux</title>
+<meta name="description" content="Détail d’un projet technique de Raphaël BLANCO--THIAW-NIAM : objectifs, technologies, captures et documents.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#18191b">
+<meta name="site-kind" content="tech">
+<meta name="page-type" content="software">
+<link rel="preload" href="fonts/urbanist-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/fonts.css">
+<link rel="stylesheet" href="assets/system.css">
+<link rel="stylesheet" href="assets/ui/cards.css">
+<link rel="stylesheet" href="assets/motion/motion.css">
+<link rel="stylesheet" href="assets/layout/layout.css">
+<link rel="stylesheet" href="assets/icons/icon.css">
+<style>
+:root {
+  --p-bg: #18191b; --p-surface: #222427; --p-ink: #eff0f1; --p-muted: #9c9ea3;
+  --p-accent: #ff4a1f; --p-accent-ink: #18191b; --p-action: #ff4a1f; --p-action-ink: #18191b;
+  --p-inv-bg: #eff0f1; --p-inv-surface: #dedfe0; --p-inv-ink: #18191b; --p-inv-muted: #5b5c5e;
+  --p-inv-accent: #18191b; --p-inv-accent-ink: #eff0f1; --p-inv-action: #18191b; --p-inv-action-ink: #eff0f1;
+  --font-display: "Urbanist", system-ui, sans-serif;
+  --font-text: "Urbanist", system-ui, sans-serif;
+  --font-mono: "DM Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  --display-weight: 500; --display-tracking: -0.03em; --display-tracking-xl: -0.04em;
+}
+/* une page de projet : elle grandit avec son contenu (pas d'écran fixe) */
+.pj { padding: calc(var(--nav) + var(--s-9)) 0 var(--s-10); }
+.pj__back { display: inline-block; margin-bottom: var(--s-7); }
+.nav__actions { margin-left: auto; }
+@media (max-width: 639px) { .nav__surname { display: none; } }
+.nav__logo { white-space: nowrap; }
+.pj h1 { font-size: clamp(38px, 3.4vw + 8px, 64px); line-height: 1.04; letter-spacing: var(--display-tracking-xl); margin: var(--s-3) 0 var(--s-5); max-width: 18ch; }
+.pj__lead { font-size: var(--t-lead); line-height: 1.5; max-width: 52ch; margin: 0; }
+.pj__grid { margin-top: var(--s-9); }
+.pj h2 { font-size: var(--t-h3); margin: 0 0 var(--s-5); }
+.pj__list { margin: 0; padding: 0; list-style: none; display: grid; gap: var(--s-3); }
+.pj__list li { position: relative; padding-left: var(--s-5); }
+.pj__list li::before { content: ""; position: absolute; left: 0; top: .62em; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
+.pj__tags { display: flex; flex-wrap: wrap; gap: var(--s-2); margin: 0; padding: 0; list-style: none; }
+.pj__tags li { height: 32px; display: inline-flex; align-items: center; padding: 0 12px; border-radius: 99px; background: color-mix(in oklab, var(--ink) 8%, transparent); font-size: var(--t-small); }
+.pj__res { margin-top: var(--s-9); }
+.pj__shots { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s-5); }
+.pj__shots figure { margin: 0; border-radius: var(--r-lg); overflow: hidden; background: var(--surface); border: 1px solid var(--line); }
+.pj__shots img { display: block; width: 100%; height: auto; }
+.pj__shots a { display: block; cursor: zoom-in; }
+.pj__shots figure:last-child:nth-child(odd) { grid-column: 1 / -1; }
+.pj__shots img { transition: transform .5s ease; }
+.pj__shots a:hover img { transform: scale(1.02); }
+.pj__docs { margin-top: var(--s-6); display: flex; flex-wrap: wrap; gap: var(--s-3); }
+.pj__others { margin-top: var(--s-10); padding-top: var(--s-7); border-top: 1px solid var(--line); }
+.pj__others ul { margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s-5); }
+@media (max-width: 1023px) { .pj__grid > * + * { margin-top: var(--s-8); } .pj__others ul { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 639px) { .pj { padding-top: calc(var(--nav) + var(--s-8)); } .pj__shots { grid-template-columns: minmax(0, 1fr); } }
+.pj__text { margin: 0; line-height: 1.6; max-width: 60ch; }
+.pj__kpis { margin: var(--s-8) 0 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s-5); }
+.pj__kpis > div { display: flex; flex-direction: column; gap: var(--s-2); padding: var(--s-5); border-radius: var(--r-lg); background: var(--surface); border: 1px solid var(--line); }
+.pj__kpis dd { margin: 0; font: var(--display-weight) clamp(32px, 2.4vw + 10px, 48px)/1 var(--font-display); letter-spacing: var(--display-tracking); color: var(--accent); }
+.pj__kpis dt { color: var(--muted); }
+.pj__block { margin-top: var(--s-9); }
+.pj__steps { counter-reset: st; margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s-5); }
+.pj__step { counter-increment: st; position: relative; padding: var(--s-6) var(--s-6) var(--s-6) calc(var(--s-6) + 44px); border-radius: var(--r-lg); background: var(--surface); border: 1px solid var(--line); }
+.pj__step::before { content: counter(st); position: absolute; left: var(--s-6); top: var(--s-6); width: 32px; height: 32px; border-radius: 50%; display: grid; place-items: center; font: 500 15px/1 var(--font-mono); background: var(--accent); color: var(--p-accent-ink); }
+.pj__step h3, .pj__issue h3 { font-size: var(--t-body, 18px); font-weight: 500; margin: 4px 0 var(--s-2); }
+.pj__step p, .pj__issue p { margin: 0; line-height: 1.55; color: color-mix(in oklab, var(--ink) 82%, transparent); }
+.pj__issues { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s-5); }
+.pj__issue { padding: var(--s-6); border-radius: var(--r-lg); border: 1px solid var(--line); border-top: 3px solid var(--accent); }
+@media (max-width: 1023px) { .pj__steps, .pj__issues { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 639px) { .pj__kpis { grid-template-columns: minmax(0, 1fr); } .pj__step { padding: var(--s-5) var(--s-5) var(--s-5) calc(var(--s-5) + 44px); } .pj__step::before { left: var(--s-5); top: var(--s-5); } }
+.pj__pdf { border: 1px solid var(--line); border-radius: var(--r-lg); overflow: hidden; background: var(--surface); }
+.pj__pdf + .pj__pdf { margin-top: var(--s-5); }
+.pj__pdf-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--s-4); padding: var(--s-5) var(--s-6); }
+.pj__pdf-head h3 { margin: 0; font-size: var(--t-body, 18px); font-weight: 500; }
+.pj__pdf-acts { display: flex; flex-wrap: wrap; gap: var(--s-3); }
+.pj__pdf-view { display: block; width: 100%; height: min(85vh, 960px); border: 0; border-top: 1px solid var(--line); background: #525659; }
+.pj__pdf-cover { display: none; }
+@media (max-width: 1023px) {
+  .pj__pdf-view { display: none; }
+  .pj__pdf-cover { display: block; padding: 0 var(--s-6) var(--s-6); }
+  .pj__pdf-cover img { display: block; width: min(100%, 320px); height: auto; border-radius: 6px; box-shadow: 0 6px 24px rgb(0 0 0 / .35); }
+}
+</style>
+</head>
+<body>
+<header class="nav">
+  <div class="wrap nav__bar">
+    <a class="skip-link" href="#top">Aller au contenu</a>
+    <a class="nav__logo" href="index.html"><span class="mark" data-mark="stack" aria-hidden="true"></span>Raphaël<span class="nav__surname">&nbsp;BLANCO--THIAW-NIAM</span></a>
+    <div class="nav__actions">
+      <a class="btn btn--primary" href="cv/CV_Raphael_BLANCO--THIAW-NIAM.pdf" download>Télécharger mon CV</a>
+    </div>
+  </div>
+</header>
+
+<main id="top" class="pj">
+  <div class="wrap">
+    <a class="link pj__back" href="index.html#projets" data-pj="retour">Retour aux projets</a>
+    <p class="t-label muted" data-pj="outil"></p>
+    <h1 data-pj="titre">Projet</h1>
+    <p class="pj__lead" data-pj="resume"></p>
+
+    <dl class="pj__kpis" data-pj="resultats" hidden></dl>
+
+    <div class="grid grid--top pj__grid">
+      <div class="span-6">
+        <div data-pj="contexte-box" hidden>
+          <h2>Le contexte</h2>
+          <p class="pj__text" data-pj="contexte"></p>
+        </div>
+        <div data-pj="objectifs-box">
+          <h2>Objectifs</h2>
+          <ul class="pj__list" data-pj="objectifs"></ul>
+        </div>
+      </div>
+      <div class="span-5 start-8">
+        <h2>Technologies</h2>
+        <ul class="pj__tags" data-pj="technologies"></ul>
+      </div>
+    </div>
+
+    <section class="pj__block" data-pj="demarche-box" hidden aria-labelledby="dem-h">
+      <h2 id="dem-h">Ce que j’ai fait, étape par étape</h2>
+      <ol class="pj__steps" data-pj="demarche"></ol>
+    </section>
+
+    <section class="pj__block" data-pj="difficultes-box" hidden aria-labelledby="dif-h">
+      <h2 id="dif-h">Les difficultés et comment je les ai réglées</h2>
+      <div class="pj__issues" data-pj="difficultes"></div>
+    </section>
+
+    <section class="pj__block" data-pj="pdf-box" hidden aria-labelledby="pdf-h">
+      <h2 id="pdf-h">Le document</h2>
+      <div data-pj="pdf"></div>
+    </section>
+
+    <section class="pj__res" data-pj="ressources" hidden aria-labelledby="res-h">
+      <h2 id="res-h">Captures, schémas et documents</h2>
+      <div class="pj__shots" data-pj="images"></div>
+      <div class="pj__docs" data-pj="docs"></div>
+    </section>
+
+    <nav class="pj__others" aria-labelledby="others-h">
+      <h2 id="others-h">Les autres projets</h2>
+      <ul data-pj="autres"></ul>
+    </nav>
+  </div>
+</main>
+
+<script src="content/projets.js"></script>
+<script src="content/travaux.js"></script>
+<script>
+(function () {
+  var projets = window.PROJETS || [], travaux = window.TRAVAUX || [];
+  var id = new URLSearchParams(location.search).get('id');
+  var p = travaux.find(function (x) { return x.id === id; });
+  var isTp = !!p;
+  if (!p) p = projets.find(function (x) { return x.id === id; }) || projets[0];
+  var all = isTp ? travaux : projets;
+  if (!p) return;
+  var $ = function (k) { return document.querySelector('[data-pj="' + k + '"]'); };
+  var li = function (text) { var e = document.createElement('li'); e.textContent = text; return e; };
+  var safe = function (u) { return /^(https?:)?\/\//i.test(u || '') || /^[\w./-]+$/.test(u || '') ? u : ''; };
+  if (isTp) {
+    $('retour').href = 'index.html#travaux'; $('retour').textContent = 'Retour aux travaux pratiques';
+    document.getElementById('others-h').textContent = 'Les autres travaux pratiques';
+  }
+  if (!p.technologies || !p.technologies.length) $('technologies').parentNode.hidden = true;
+  document.title = p.titre + ' : projet de Raphaël BLANCO--THIAW-NIAM';
+  $('outil').textContent = p.outil;
+  $('titre').textContent = p.titre;
+  $('resume').textContent = p.resume;
+  (p.objectifs || []).forEach(function (t) { $('objectifs').append(li(t)); });
+  var el = function (tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; };
+  if (p.contexte) { $('contexte').textContent = p.contexte; $('contexte-box').hidden = false; }
+  if (p.resultats && p.resultats.length) {
+    p.resultats.forEach(function (k) { var d = el('div'); d.append(el('dd', null, k.valeur), el('dt', null, k.label)); $('resultats').append(d); });
+    $('resultats').hidden = false;
+  }
+  if (p.demarche && p.demarche.length) {
+    p.demarche.forEach(function (st) { var item = el('li', 'pj__step'); item.append(el('h3', null, st.titre), el('p', null, st.texte)); $('demarche').append(item); });
+    $('demarche-box').hidden = false;
+    $('objectifs-box').hidden = true;
+  }
+  if (p.difficultes && p.difficultes.length) {
+    p.difficultes.forEach(function (d) { var c = el('article', 'pj__issue'); c.append(el('h3', null, d.titre), el('p', null, d.texte)); $('difficultes').append(c); });
+    $('difficultes-box').hidden = false;
+  }
+  (p.technologies || []).forEach(function (t) { $('technologies').append(li(t)); });
+
+  var r = p.ressources || {};
+  var imgs = [].concat(r.schemas || [], r.captures || []);
+  imgs.forEach(function (im) {
+    if (!safe(im.src)) return;
+    var f = document.createElement('figure');
+    var i = document.createElement('img');
+    i.src = im.src; i.alt = im.alt || ''; i.loading = 'lazy';
+    var l = document.createElement('a');
+    l.href = im.src; l.target = '_blank'; l.rel = 'noopener'; l.setAttribute('aria-label', 'Agrandir : ' + (im.alt || 'image'));
+    l.append(i); f.append(l); $('images').append(f);
+  });
+  var docs = [];
+  (r.pdf || []).forEach(function (d) {
+    var url = safe(d.url);
+    if (!url) return;
+    var box = document.createElement('article'); box.className = 'pj__pdf';
+    var head = document.createElement('div'); head.className = 'pj__pdf-head';
+    var name = document.createElement('h3'); name.textContent = d.titre || 'Document PDF';
+    var acts = document.createElement('div'); acts.className = 'pj__pdf-acts';
+    var view = document.createElement('a'); view.className = 'btn btn--secondary'; view.textContent = 'Ouvrir en plein écran'; view.href = url; view.target = '_blank'; view.rel = 'noopener';
+    var dl = document.createElement('a'); dl.className = 'btn btn--primary'; dl.textContent = 'Télécharger le PDF'; dl.href = url; dl.setAttribute('download', '');
+    acts.append(view, dl); head.append(name, acts); box.append(head);
+    if (/^docs\/[\w.-]+\.pdf$/.test(url)) {
+      var cover = document.createElement('a'); cover.className = 'pj__pdf-cover'; cover.href = url; cover.target = '_blank'; cover.rel = 'noopener';
+      var ci = document.createElement('img'); ci.src = url.replace(/^docs\//, 'docs/apercus/').replace(/\.pdf$/, '.jpg'); ci.alt = 'Première page : ' + (d.titre || 'document'); ci.loading = 'lazy';
+      cover.append(ci); box.append(cover);
+    }
+    var frame = document.createElement('iframe');
+    frame.className = 'pj__pdf-view'; frame.title = d.titre || 'Document PDF'; frame.loading = 'lazy';
+    frame.src = url + '#view=FitH';
+    box.append(frame);
+    $('pdf').append(box);
+  });
+  if ($('pdf').children.length) $('pdf-box').hidden = false;
+  if (safe(r.github)) docs.push(['Voir le code sur GitHub', r.github]);
+  docs.forEach(function (d) {
+    var a = document.createElement('a');
+    a.className = 'btn btn--secondary'; a.textContent = d[0]; a.href = d[1]; a.target = '_blank'; a.rel = 'noopener';
+    $('docs').append(a);
+  });
+  if (imgs.length || docs.length) $('ressources').hidden = false;
+
+  all.filter(function (x) { return x.id !== p.id; }).forEach(function (x) {
+    var a = document.createElement('a');
+    a.className = 'link'; a.href = 'projet.html?id=' + encodeURIComponent(x.id); a.textContent = x.titre;
+    var item = document.createElement('li'); item.append(a); $('autres').append(item);
+  });
+})();
+</script>
+<script type="module" src="assets/system.js"></script>
+<script type="module" src="assets/motion/motion.js"></script>
+</body>
+</html>

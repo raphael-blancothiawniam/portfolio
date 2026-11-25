@@ -1,0 +1,7 @@
+/* Polices hébergées sur le site (pas d'appel à Google Fonts) : Urbanist et DM Mono, licence SIL OFL */
+@font-face { font-family: "Urbanist"; font-style: normal; font-display: swap; font-weight: 100 900;
+  src: url("../fonts/urbanist-latin-wght-normal.woff2") format("woff2-variations"), url("../fonts/urbanist-latin-wght-normal.woff2") format("woff2"); }
+@font-face { font-family: "DM Mono"; font-style: normal; font-display: swap; font-weight: 400;
+  src: url("../fonts/dm-mono-latin-400-normal.woff2") format("woff2"); }
+@font-face { font-family: "DM Mono"; font-style: normal; font-display: swap; font-weight: 500;
+  src: url("../fonts/dm-mono-latin-500-normal.woff2") format("woff2"); }
